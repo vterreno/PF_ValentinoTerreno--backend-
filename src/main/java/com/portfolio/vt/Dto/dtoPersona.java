@@ -1,43 +1,33 @@
-package com.portfolio.vt.Entity;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.portfolio.vt.Dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
-
-
-
-@Entity 
-public class Persona {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    
-    @NotNull
-    @Size(min = 1, max = 50, message = "No cumple con la longitud")
+/**
+ *
+ * @author PC
+ */
+public class dtoPersona {
+    @NotBlank
     private String nombre;
-    
-    @NotNull
-    @Size(min = 1, max = 50, message = "No cumple con la longitud")
+    @NotBlank
     private String apellido;
-    
-    @NotNull
+    @NotBlank
     private String descripcion;
-    
+    @NotBlank
     private String img;
-
-    @Size(min = 1, max = 50, message = "No cumple con la longitud")
+    @NotBlank
     private String segundoNombre;
-    
+    @NotBlank
     private String pdf;
-
-    public Persona() {
+    
+    public dtoPersona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img, String segundoNombre) {
+    public dtoPersona(String nombre, String apellido, String descripcion, String img, String segundoNombre, String pdf) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
@@ -46,22 +36,14 @@ public class Persona {
         this.pdf = pdf;
     }
     
-    public String getPdf() {
+    public String getPdf(){
         return pdf;
     }
     
-    public void setPdf(String pdf) {
+    public void setPdf(String pdf){
         this.pdf = pdf;
     }
     
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -102,5 +84,5 @@ public class Persona {
         this.segundoNombre = segundoNombre;
     }
     
-   
+    
 }
