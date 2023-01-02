@@ -6,15 +6,19 @@ package com.portfolio.vt.Security.Dto;
 
 import java.util.HashSet;
 import java.util.Set;
+import javax.validation.constraints.NotBlank;
 
 /**
  *
  * @author PC
  */
 public class NuevoUsuario {
+    @NotBlank
     private String nombre;
+    @NotBlank
     private String nombreUsuario;
     private String email;
+    @NotBlank
     private String password;
     private Set<String> roles = new HashSet<>();
     
